@@ -1,5 +1,10 @@
-﻿using System;
+﻿// Author: Ryan Pinkney
+// This is the model for the movie. It has a foreign key relationship with the category model.
+
+
+using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ismission5RyanPinkney.Models
 {
@@ -24,22 +29,30 @@ namespace ismission5RyanPinkney.Models
         [Required]
         public string sDirector { get; set; }
 
-        // Movie category
-        [Required]
-        public string sCategory { get; set; }
-
         // Movie rating
         [Required]
         public string sRating { get; set; }
 
         // Movie edited
-        public bool bIsEdited { get; set; }
+        public string sIsEdited { get; set; }
 
         // Movie lent to
         public string sLentToName { get; set; }
 
         // Movie notes
         public string sNotes { get; set; }
+
+
+        // Foreign Key relationship
+
+        // Movie category
+        // Set as the foreign key
+        [ForeignKey("Category")]
+        public int Category_id { get; set; }
+
+
+        // Category of type Category
+        public Category Category { get; set; }
 
 
 

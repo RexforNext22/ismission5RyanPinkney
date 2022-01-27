@@ -3,7 +3,7 @@
 *@
 @{
     <!--Set the title-->
-    ViewData["Title"] = "Movies";
+    ViewData["Title"] = "Edit";
 }
 
 <!--
@@ -12,16 +12,19 @@ Form page
 
 -->
 
-
-<h3>Enter a movie</h3>
+<!--Title-->
+<h3>Edit a movie</h3>
 
 <!--Bring in the model-->
 @model ismission5RyanPinkney.Models.Movie
 
 <div>
 
-    <!--Form to add a movie to the database-->
+    <!-- Form to edit a movie record-->
     <form method="POST">
+
+        <!--Hidden field for the movie id-->
+        <input type="hidden" asp-for="movie_id" />
 
         <!--Field for title-->
         <label asp-for="sTitle">Title</label>
@@ -31,9 +34,10 @@ Form page
         <label asp-for="Category_id">Category:</label>
         <select asp-for="Category_id">
 
-            <!--Load the categories from the database through the controller-->
             <option value="">Select a Category</option>
 
+
+            <!--Bring in the list of categories from the database through the controller-->
             @foreach (Category m in ViewBag.lstCategories)
             {
                 <option value="@m.Category_id">@m.sCategory_name</option>
@@ -78,16 +82,15 @@ Form page
         </select><br />
 
         <!--Field for Notes-->
-        <!--Length is restricted to 25 characters-->
+        <!--Message is restricted to 25 characters-->
         <label asp-for="sNotes">Notes</label>
         <textarea asp-for="sNotes" maxlength="25"></textarea><br /><br />
 
         <!--Field to submit-->
         <button type="submit">Submit</button>
 
-        <!--Show the data validation message-->
-        <div asp-validation-summary="All"></div>
-
     </form>
 
+    <!--Show the validation summary-->
+    <div asp-validation-summary="All"></div>
 </div>
