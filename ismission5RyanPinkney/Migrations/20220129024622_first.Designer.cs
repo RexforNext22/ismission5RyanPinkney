@@ -8,7 +8,7 @@ using ismission5RyanPinkney.Models;
 namespace ismission5RyanPinkney.Migrations
 {
     [DbContext(typeof(MovieContext))]
-    [Migration("20220127214642_first")]
+    [Migration("20220129024622_first")]
     partial class first
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -82,11 +82,11 @@ namespace ismission5RyanPinkney.Migrations
                     b.Property<int>("Category_id")
                         .HasColumnType("INTEGER");
 
+                    b.Property<bool>("bIsEdited")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("sDirector")
                         .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("sIsEdited")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("sLentToName")
@@ -118,8 +118,8 @@ namespace ismission5RyanPinkney.Migrations
                         {
                             movie_id = 1,
                             Category_id = 1,
+                            bIsEdited = false,
                             sDirector = "Joss Whedon",
-                            sIsEdited = "false",
                             sLentToName = "",
                             sNotes = "",
                             sRating = "PG-13",
@@ -130,8 +130,8 @@ namespace ismission5RyanPinkney.Migrations
                         {
                             movie_id = 2,
                             Category_id = 1,
+                            bIsEdited = false,
                             sDirector = "Tim Burton",
-                            sIsEdited = "false",
                             sLentToName = "",
                             sNotes = "",
                             sRating = "PG-13",
@@ -142,8 +142,8 @@ namespace ismission5RyanPinkney.Migrations
                         {
                             movie_id = 3,
                             Category_id = 1,
+                            bIsEdited = false,
                             sDirector = "Joel Schumacher",
-                            sIsEdited = "false",
                             sLentToName = "",
                             sNotes = "",
                             sRating = "PG-13",

@@ -95,7 +95,7 @@ namespace ismission5RyanPinkney.Models
                     sDirector = "Joss Whedon",
                     Category_id = 1,
                     sRating = "PG-13",
-                    sIsEdited = "false",
+                    bIsEdited = false,
                     sLentToName = "",
                     sNotes = ""
                 },
@@ -107,7 +107,7 @@ namespace ismission5RyanPinkney.Models
                     sDirector = "Tim Burton",
                     Category_id = 1,
                     sRating = "PG-13",
-                    sIsEdited = "false",
+                    bIsEdited = false,
                     sLentToName = "",
                     sNotes = ""
 
@@ -120,7 +120,7 @@ namespace ismission5RyanPinkney.Models
                     sDirector = "Joel Schumacher",
                     Category_id = 1,
                     sRating = "PG-13",
-                    sIsEdited = "false",
+                    bIsEdited = false,
                     sLentToName = "",
                     sNotes = ""
 

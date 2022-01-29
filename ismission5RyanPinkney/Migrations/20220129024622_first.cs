@@ -29,7 +29,7 @@ namespace ismission5RyanPinkney.Migrations
                     sYear = table.Column<string>(nullable: false),
                     sDirector = table.Column<string>(nullable: false),
                     sRating = table.Column<string>(nullable: false),
-                    sIsEdited = table.Column<string>(nullable: true),
+                    bIsEdited = table.Column<bool>(nullable: false),
                     sLentToName = table.Column<string>(nullable: true),
                     sNotes = table.Column<string>(nullable: true),
                     Category_id = table.Column<int>(nullable: false)
@@ -87,18 +87,18 @@ namespace ismission5RyanPinkney.Migrations
 
             migrationBuilder.InsertData(
                 table: "responses",
-                columns: new[] { "movie_id", "Category_id", "sDirector", "sIsEdited", "sLentToName", "sNotes", "sRating", "sTitle", "sYear" },
-                values: new object[] { 1, 1, "Joss Whedon", "false", "", "", "PG-13", "Avenger, The", "2012" });
+                columns: new[] { "movie_id", "Category_id", "bIsEdited", "sDirector", "sLentToName", "sNotes", "sRating", "sTitle", "sYear" },
+                values: new object[] { 1, 1, false, "Joss Whedon", "", "", "PG-13", "Avenger, The", "2012" });
 
             migrationBuilder.InsertData(
                 table: "responses",
-                columns: new[] { "movie_id", "Category_id", "sDirector", "sIsEdited", "sLentToName", "sNotes", "sRating", "sTitle", "sYear" },
-                values: new object[] { 2, 1, "Tim Burton", "false", "", "", "PG-13", "Batman", "1989" });
+                columns: new[] { "movie_id", "Category_id", "bIsEdited", "sDirector", "sLentToName", "sNotes", "sRating", "sTitle", "sYear" },
+                values: new object[] { 2, 1, false, "Tim Burton", "", "", "PG-13", "Batman", "1989" });
 
             migrationBuilder.InsertData(
                 table: "responses",
-                columns: new[] { "movie_id", "Category_id", "sDirector", "sIsEdited", "sLentToName", "sNotes", "sRating", "sTitle", "sYear" },
-                values: new object[] { 3, 1, "Joel Schumacher", "false", "", "", "PG-13", "Batman & Robin", "1997" });
+                columns: new[] { "movie_id", "Category_id", "bIsEdited", "sDirector", "sLentToName", "sNotes", "sRating", "sTitle", "sYear" },
+                values: new object[] { 3, 1, false, "Joel Schumacher", "", "", "PG-13", "Batman & Robin", "1997" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_responses_Category_id",

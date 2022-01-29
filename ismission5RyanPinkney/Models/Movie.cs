@@ -34,7 +34,9 @@ namespace ismission5RyanPinkney.Models
         public string sRating { get; set; }
 
         // Movie edited
-        public string sIsEdited { get; set; }
+        // Professor Hilton said to make this field required to get the boolean to work with sqlite
+        [Required]
+        public bool bIsEdited { get; set; }
 
         // Movie lent to
         public string sLentToName { get; set; }
